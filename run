@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# chmod +x run
+# git init
+# conda activate n20p3
+
+# npm create vite@latest # Project name: neuerOrdner Package name: neuerordner Select a framework: React Select a variant: JavaScript
+# cd neuerOrdner wie Projektname
+# npm install
+# npm i bootstrap@lates # @5.3.2
+
+npm run dev

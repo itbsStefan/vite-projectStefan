@@ -1,9 +1,12 @@
 //rafce import React from 'react'
 
-const variable  = "ibex-code";
+let variable  = "ibex-code";
 //const Welcome = (props) => { // {props.name} {props.age}
-console.log("eine Variable: ", variable); 
+console.log("KlasseVariableWelcome: ", variable); 
+
 const Welcome = ({age,text,name}) => {
+  variable += " +";
+  // console.log("für jedes verwenden von Welcome ein Punkt ", variable); 
   return (
     <>
     <div>Welcome {name} {age} {text} {variable} </div>
@@ -11,4 +14,9 @@ const Welcome = ({age,text,name}) => {
   )
 }
 
+const Display = (props) => {return (
+  <div>Display {variable} {props.alter} {props.name} {props.zweiteparameter} <b>{props.text}</b></div>
+)}
+
 export default Welcome; 
+export {Display};

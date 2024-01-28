@@ -1,0 +1,22 @@
+/* 
+  von main.jsx  importierte Styles
+  für das react-dom/client rootdiv als App.jsx Objekt
+  React verwendet bootstrap welches direkt verwendet werden kann
+  "../node_modules/bootstrap/dist/css/bootstrap.css"
+ */
+
+ .gross {
+  font-size:x-large;
+ }
+
+.li>active{
+  font-size:xx-large;
+}
+
+.list-group-item:active{
+  font-size:x-large;
+}
+
+.list-group-item:hover{
+  background-color: cornflowerblue;
+}

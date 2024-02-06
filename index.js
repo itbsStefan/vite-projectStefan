@@ -1,11 +1,11 @@
 
 function einEvent (event) {
   this.text = "hi";
-  alert("hi"+event);
+  alert("hi einEvent "+event);
 }; 
 
 function meinEvent(event){
-  console.log(event);
+  console.log("meinEvent aus index.js ",event);
   event.hidden=true;
 }
 
@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded',  () => {
   let e = document.getElementById('davor');
   meinEvent(e);
   e  = document.getElementById('danach');
-  meinEvent(e);
+  //meinEvent(e);
 });
 
 console.log("index.js");

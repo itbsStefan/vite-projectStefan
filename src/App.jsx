@@ -3,6 +3,8 @@ import ListGroup, { Anzeige } from "./react/components/ListGroup";
 import Stefan from "./react/components/Stefan";
 import Icons from "./react/components/Icons";
 import MyInput from "./react/components/uebungen/MyInput";
+import CountApp from './components/CountApp'
+import ClickMich from './components/ClickMich'
 import { Fragment } from "react";
 
 let appAuswahl = {'Name':"1","Stadt":0,"Alter":2};
@@ -17,6 +19,8 @@ const alter = ['10', '20','42'];
 function App() { // <> ist ein leeres Fragment quasi HTML Code
   return (
     <>
+      <ClickMich />
+      <CountApp /> 
       <Anzeige ausgewaelt={appAuswahl} name={appAuswahl['Name']} stadt={stadt[appAuswahl['Stadt']]} alter={alter[appAuswahl['Alter']]}/>
       <Display name="" text="Anzeigetext im Display" zweiteparameter="2"/>
       <Icons />
@@ -34,7 +38,7 @@ function App() { // <> ist ein leeres Fragment quasi HTML Code
              <Welcome name="Name.active.ValueText" age={"Alter.active.ValueText"} text={alter[1]} />
              <Display stadt="Display" namen="Tom" alter={appAuswahl.Alter}/>
              <Stefan name="testname" age="16" />
-             <MyInput />
+             <MyInput /> 
     </>
   ) // vom return
 }   // function App()

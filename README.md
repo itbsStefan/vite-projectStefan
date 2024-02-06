@@ -8,3 +8,9 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # vite-projectStefan see run file
 Main Branch https://dynamic-creponne-ac55d9.netlify.app/
+
+## Source Code
+https://github.com/itbsStefan/vite-projectStefan
+
+### die Dokuwiki Kursinformationsablage
+http://wiki.itbs.selfhost.co/doku.php?id=ibex:kursinhalte:start

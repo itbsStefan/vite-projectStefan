@@ -1,32 +1,55 @@
 import { useRef } from 'react';
 
-export function MyInput() {
+export function MyInput({defaulttext=null}) {
 
-    const ref = useRef("");
-    let x = " Hallo Welt mMyInput Komponete let x Text "
-    function doMyEvent(event){
-        ref.current = event.target.value
-        console.log("Ev happeneh" + event.target.value)
-        x = event.target.value
+  let titeltext = ""
+  //const eventRefImput = useRef(defaulttext); // Intitialisierung Event Ref Variable
+  if(defaulttext === null) {
+    defaulttext = ""
+    titeltext = "noch kein Text eingegeben"
+  }else{
+    titeltext = defaulttext
+  }
+  console.log(defaulttext,titeltext)
+  const eventRefImput = useRef(defaulttext); // Intitialisierung Event Ref Variable
 
-        //Span organisieren und reinschreiben
-        const my_span =event.target.nextElementSibling
-        my_span.innerHTML = event.target.value
-    }
+  let x = " MyInput Komponete let x Text "
 
-    return (<div>
-        <label htmlFor="site-search">Suche folgenden Text:</label>
-        <input
-            type="search"
-            id="customInput"
-            name="q"
-            placeholder="search"
-            onChange={doMyEvent}
-             />
+  function doMyEvent(event){
+      eventRefImput.current = event.target.value
+      console.log("eventRefImput change happen " + event.target.value)
+      x = event.target.value
+      /* console.log(event); */
+      //Span organisieren und reinschreiben
+      const nextElement = event.target.nextElementSibling
+      nextElement.innerHTML = event.target.value
+      // FIXME: schlechte Idee da die Komponente mehrfach auf eine Seite sein kann
+      // finde den h2 Tag vor den Imputfeld bzw. vor dem label htmlFor="customInput"
+      document.getElementById('imputtitel').innerHTML =  "<span>Eingabe: </span>" + event.target.value
+  }
 
-        <span></span>
+  function doSomethingonFokus(event) {
+    const nextElement = event.target.nextElementSibling
+    nextElement.innerHTML = "<p>onFokus use current Ref</p>"
+    event.target.value = eventRefImput.current
+  }
 
-        {x} {ref.current} </div>);
+  return (<div>
+    <h2 id="imputtitel" > {titeltext}</h2>
+    <label htmlFor="customInput">Suche folgenden Text:</label>
+    {x}  
+    <input
+        type="search"
+        id="customInput"
+        name="q"
+        placeholder="search"
+        // value={defaulttext}
+        onChange={doMyEvent}
+        onFocus={doSomethingonFokus}
+          /> <span> nextElementSibling </span>
+{/*         <div> nix </div>
+      <div> next div </div> */}
+  </div>);
 }
 
 export default MyInput;

@@ -5,15 +5,15 @@ import React from "react";
 function Icons () { 
   return (<>
 
-<h1>Text</h1>
+<h1>Icons</h1>
 
   </>)
 }
 
-function Icons2 () { 
+const Icons2 = () => {
   return (<>
 
-<h1>Text2</h1>
+<h1>Icons2</h1>
 
   </>)
 }

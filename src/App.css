@@ -5,9 +5,17 @@
   "../node_modules/bootstrap/dist/css/bootstrap.css"
  */
 
- .gross {
-  font-size:x-large;
- }
+.gross {
+  font-size:large;
+}
+.line {
+  border: 3px dotted rgb(112, 239, 8);
+}
+#cars, .liste, .ManagedList {
+  background-color: rgb(66, 23, 222);
+  width: 90%; 
+  margin: auto;
+}
 
 .li>active{
   font-size:xx-large;

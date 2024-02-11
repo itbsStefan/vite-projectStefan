@@ -1,8 +1,8 @@
 import { useState } from "react";
 let auswahl = "varAuswahl";
+let variable = "ListGroup Variable TEXT";
 
-
-const ListGroup = ({id,liste,s}) => {
+const ListGroup = ({id,liste,appAuswahlValues}) => { //idVarListenname einArray objekt mit IDprop und ausgewälten Wert der liste
   // hier Javascript
   const [actualIndex , setActualIndex] = useState(-1); //anstelle let = actualInex = -1;
   // console.log("registrierte Variabl ", actualIndex); // in dev doppelte Ausgabe
@@ -34,7 +34,7 @@ const ListGroup = ({id,liste,s}) => {
   {liste.map((listenElementText,index) => ( // singel line statement ohne return jsx Code
     <li
       onClick={() => {
-        handleClick(index,s) // ,justLog()
+        handleClick(index,appAuswahlValues) // ,justLog()
       }}
       className={actualIndex === index ? "list-group-item active" : "list-group-item"} 
       key={listenElementText}>
@@ -71,8 +71,19 @@ const Anzeige = ({alter,name,stadt,ausgewaelt}) => {
   onClick={() => {
     anzeigeClick()
   }}
-  >AnzeigeText {auswahl}|{typeof s}|A{ausgewaelt.Alter} S{stadt} N{name} eigentlich alle props</p></>)
+  >AnzeigeText {auswahl}|{typeof s}|A{ausgewaelt.Alter} S{stadt} N{name} eigentlich alle props</p>
+  </>)
 };
+
+const DisplayListGroup = (props) => {
+  if(props.namen){
+    //console.log(props.namen);
+  }
+  //console.log(props);
+  return (
+  <div>Display {variable} Stadt:{props.stadt} Alter={props.alter} Namen:{props.namen} Name:{props.name} {props.zweiteparameter} <b>{props.text}</b></div>
+)}
+export {DisplayListGroup};
 
 export default ListGroup;
 export {Anzeige};

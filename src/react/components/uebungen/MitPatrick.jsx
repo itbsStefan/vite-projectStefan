@@ -1,7 +1,7 @@
 import logo from '/vite.svg';
 //import './App.css';
 
-function AppC() {
+function MitPatrick() {
   const myFunction = (event) => {
     alert('OKAY ' + event.target.innerText);
   };
@@ -15,7 +15,7 @@ function AppC() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/react/components/uebung/AppC.jsx</code> and save to reload.
+          Edit <code>src/react/components/uebung/MitPatrick.jsx</code> and save to reload.
         </p>
 
         <p>Berlin 2024 Januar</p>
@@ -23,7 +23,10 @@ function AppC() {
           <strong>Hallo Welt !</strong>
         </p>
         
-        <button onClick={event => myFunction(event)}>Klick mich</button>
+        <button 
+          onClick={event => myFunction(event)}
+        >Klick mich
+        </button> .. 
         <button
           onClick={myFunction}
           onMouseEnter={event => myHover(event)}
@@ -34,4 +37,4 @@ function AppC() {
   );
 }
 
-export default AppC;
+export default MitPatrick;

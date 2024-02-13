@@ -1,35 +1,33 @@
-import React from "react";
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useState } from 'react';
 import './App.css';
-import CountApp from './components/CountApp';
-import Navigation from   './components/Navigation';
-import Cart from "./components/Cart";
+import PureComponent from './components/PureComponent';
+import ImpureComponent from './components/ImpureComponent';
+import ExpandableText from './components/ExpandableText/ExpandableText';
 
-const defaultProducts = [
-  'Produkt-1',
-  'Produkt-2'
-]
+// React updatet state asynchron => also nicht sofort, wegen Performance
+// State wird außerhalb der Komponente gespeichert
+// Hooks wie State-Hook können nur an oberster Stelle der Komponente genutzt werden
 
+const App = () => {
+    const [isVisible, setVisibility] = useState(false);
+    let count = 0; // Function Scope, immer 0
 
-function App() {
-  const [cartItems, setCartItems] = useState(['Produkt-1','Produkt-2'])
+    const handleClick = () => {
+        setVisibility(true);
+        console.log(isVisible);
 
-  function deleteCartItems(e) {
-    setCartItems([])
-  }
-  function setDefaultCartItems(e) {
-    setCartItems(defaultProducts)
-  }
+        count++; // Update hier geht verloren wenn Komponente re-rendert
+    };
+    // Updated State erst nach dem Ausführen der Function
 
-
-
-  return (
-    <>
-      <Navigation cartItemAmount={cartItems.length} setDefaultCartItems={setDefaultCartItems}/>
-      <br /><hr />
-      <Cart cartItems={cartItems} deleteCartItems={deleteCartItems} />
-    </>
-  ) // vom return
-}   // function App()
+    console.log(count);
+    return (
+        <div>
+            {count} {/* Immer 0 */}
+            <button onClick={handleClick}>Click</button>
+        </div>
+    );
+};
 
 export default App;

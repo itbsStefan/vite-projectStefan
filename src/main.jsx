@@ -10,10 +10,12 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css"
 // ersetzt InnerHTML des rootdiv mit dem return der App Klasse
 ReactDOM.createRoot(document.getElementById('rootdiv')).render(
   <React.StrictMode>
+  {/* <!--
   <p id="mainheadline">ReactDOM.createRoot rootdiv im Bootstrapstyle 
     <br/> (Klicke auf ein WelcomeBlock weiter unten um diesen Text auszublenden!)</p>
-  {/* <Welcome />
-  <hr class="line" />
+  --> */}
+  <Welcome text={"zu React coding"}/>
+  {/*<hr class="line" />
   <MitPatrick />
   <hr class="line" /> */}
   {/* <Anwendung /> */}

@@ -2,7 +2,7 @@
 
 let variable  = "Welcome-Code-Block";
 //const Welcome = (props) => { // {props.name} {props.age}
-console.log("KlasseVariableWelcome: ", variable); 
+console.log("KlasseVariableWelcome: (Anzahl + zeigt die Aufrufe von Welcome.renderReturn())", variable); 
 
 
 const Welcome = ({age,text,name}) => {
@@ -13,18 +13,22 @@ const Welcome = ({age,text,name}) => {
     console.log("Welcome justLog: ",age, text,name);
   }
   
-  function handleClick(text) {
+  function handleClick(event={},text) {
     console.log("Welcome handleClick mit text:",text); 
-    document.getElementById('mainheadline').hidden=true;
+    const e = document.getElementById('mainheadline')
+    if(e)
+      e.hidden=true;
   }
-  
+
+  //handleClick({},text)  
+  console.log(variable)
   return (
     <>
     <div
-    onClick={() => {
-      handleClick(text) // ,justLog()
+    onClick={(event) => {
+      handleClick(event,text) // ,justLog()
     }}
-    >Welcome {name} {age} {text} {variable} </div>
+    >Welcome {name} {age} {text}</div>
     </>
   )
 }

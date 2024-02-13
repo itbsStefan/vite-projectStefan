@@ -1,34 +1,33 @@
-import { Fragment } from "react";
-import CountApp from './components/CountApp'
+import React from "react";
+import { useState } from "react";
+import './App.css';
+import CountApp from './components/CountApp';
+import Navigation from   './components/Navigation';
+import Cart from "./components/Cart";
 
-import Welcome from "./react/Welcome";
-import Stefan from "./react/components/Stefan";
-import Icons, {Icons2} from "./react/components/Icons";
-import MyInput from "./react/components/uebungen/MyInput";
-import Stopwatch from "./react/components/Stopwatch";
-import ListGruppe from "./react/components/ListGruppe";
-import Anwendung from "./react/components/uebungen/mitChris/Anwendung";
-import ListGroup, {DisplayListGroup, Anzeige } from "./react/components/uebungen/mitChris/ListGroup";
-import AppNiels from "./components/AppNiels"
+const defaultProducts = [
+  'Produkt-1',
+  'Produkt-2'
+]
 
-// name={appAuswahl.Name} stadt={stadt[appAuswahl.Stadt]} alter={alter[appAuswahl.Alter]}
-function App() { // <> ist ein leeres Fragment quasi HTML Code
+
+function App() {
+  const [cartItems, setCartItems] = useState(['Produkt-1','Produkt-2'])
+
+  function deleteCartItems(e) {
+    setCartItems([])
+  }
+  function setDefaultCartItems(e) {
+    setCartItems(defaultProducts)
+  }
+
+
+
   return (
     <>
-      {/* <Icons /> <Icons2 /> */}
-      <Welcome text="zum React" />
-      <MyInput /> 
-      {/* <MyInput defaulttext="Inputfeld mit Startwert"/> */}
-      {/* <ClickMich /> */}
-      {/* <Stopwatch /> */}
-      <Anwendung />
-      <AppNiels />
-      {/* <CountApp />  */}
-
-      {/* <Welcome name="Textparameter ->Zahl:" age={42} text={"Das ist Text"} /> */}
-      {/* <MyInput />  */}
-      {/* <Stefan name="testname" age="16" /> */}
-
+      <Navigation cartItemAmount={cartItems.length} setDefaultCartItems={setDefaultCartItems}/>
+      <br /><hr />
+      <Cart cartItems={cartItems} deleteCartItems={deleteCartItems} />
     </>
   ) // vom return
 }   // function App()

@@ -1,13 +1,15 @@
 
-function meineFunktion(parameter,hide){
-  console.log("meinFunktion aus index.js ",parameter,hide);
+console.log("public index.js");
+
+function meineFunktion(parameterHTMLElement,hide){
+  console.log("meinFunktion aus index.js ",parameterHTMLElement,hide);
   if(hide){
-    parameter.hidden=true;
+    parameterHTMLElement.hidden=true;
   }else{
-    parameter.addEventListener('onClick', (event) => {
+    parameterHTMLElement.addEventListener('onClick', (event) => {
       console.log(event.target.value);
       alert("test");
-      parameter.hidden=true;
+      parameterHTMLElement.hidden=true;
     });  
   }
 }
@@ -16,9 +18,18 @@ window.addEventListener('DOMContentLoaded',  () => {
   console.log("public index.js DOMContentLoaded wurde gestartet ...");
   let e = document.getElementById('davor');
   meineFunktion(e,true);
+
   e  = document.getElementById('danach');
-  meineFunktion(e,false);
+  // möchte ich später per Klick oder Funktionsaufruf selber steuern
+  //meineFunktion(e,false); 
+  meineFunktion(e,true);
+
+  // sollte nur per Klick z.B. auf Welcome Componente ausgeblendet werden
+  // geht ja nicht da diese noch nicht gerendert ist
+  //e  = document.getElementById('mainheadline');
+  //meineFunktion(e,true);
 });
+
 function einEvent (event,myalert=false,nextClickLogValue) {
   event = event || window.event;
   //this.text = "hi";
@@ -38,4 +49,4 @@ function einEvent (event,myalert=false,nextClickLogValue) {
 p.addEventListener("onClick", (event) => {
   alert("hi einEvent "+event);
 }); */
-console.log("public index.js");
+console.log("public index.js ende");

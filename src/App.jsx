@@ -26,6 +26,9 @@ const App = () => {
         <div>
             {count} {/* Immer 0 */}
             <button onClick={handleClick}>Click</button>
+            <hr />
+            <PureComponent />
+            <ImpureComponent />
         </div>
     );
 };

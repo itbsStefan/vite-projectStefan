@@ -1,0 +1,38 @@
+
+
+Aufgaben
+
+------------------------------------------------------
+
+1) // TO-DO Setze player name to "Bob"
+
+const [game, setGame] = useState({
+        id: 1,
+        player: {
+            name: 'John',
+        },
+    });
+    
+-------------------------------------------------------
+
+2) // TO-DO: Neues Topping dem toppings Array hinzufügen
+
+ const [pizza, setPizza] = useState({
+        name: 'Spicy Pepperoni',
+        toppings: ['Mushroom'],
+    });
+
+
+-------------------------------------------------------
+
+3) // TO-DO: Ändere quantity des Produkts mit id 2 zu 2
+
+ const [cart, setCart] = useState({
+        discount: 0.1,
+        items: [
+            { id: 1, title: 'Product 1', quantity: 1 },
+            { id: 2, title: 'Product 2', quantity: 1 },
+        ],
+    });
+    
+--------------------------------------------------------

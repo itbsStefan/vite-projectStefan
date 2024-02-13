@@ -1,3 +1,7 @@
+## Übungen
+
+http://wiki.itbs.selfhost.co/doku.php?id=ibex:kursinhalte:christian:aufgaben
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

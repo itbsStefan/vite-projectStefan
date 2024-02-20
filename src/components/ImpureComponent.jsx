@@ -7,9 +7,9 @@ let count = 0; // Impure , produziert anderes Ergebnis, nicht tun!
 
 const ImpureComponent = () => {
     count++;
-    console.log('Message ' + count); // Check console log um Strict Mode zu sehen
+    console.log('ImpureComponent ' + count); // Check console log um Strict Mode zu sehen
 
-    return <div>Message {count}</div>;
+    return <div>ImpureComponent {count}</div>;
 };
 
 export default ImpureComponent;

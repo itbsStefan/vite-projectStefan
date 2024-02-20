@@ -11,7 +11,9 @@ Egal wie oft man die Funktion aufruft, man bekommt immer das gleiche Ergebnis
 const PureComponent = () => {
     let count = 0;
     count++;
-    return <div>Message {count}</div>;
+    console.log('PureComponent ' + count); // Check console log um Strict Mode zu sehen
+
+    return <div>PureComponent {count}</div>;
 };
 
 export default PureComponent;

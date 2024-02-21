@@ -4,6 +4,7 @@ import './App.css';
 import CountApp from './components/CountApp';
 import Navigation from   './components/Navigation';
 import Cart from "./components/Cart";
+import OnlineStatusHookApp from "./components/OnlineStatusHookApp";
 
 const defaultProducts = [
   'Produkt-1',
@@ -28,6 +29,8 @@ function App() {
       <Navigation cartItemAmount={cartItems.length} setDefaultCartItems={setDefaultCartItems}/>
       <br /><hr />
       <Cart cartItems={cartItems} deleteCartItems={deleteCartItems} />
+      <hr />
+      <OnlineStatusHookApp />
     </>
   ) // vom return
 }   // function App()
